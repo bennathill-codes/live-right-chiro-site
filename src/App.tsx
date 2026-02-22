@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import adjustmentImg from './assets/adjustment.jpg';
 import adjustmentsImg from './assets/adjustments.jpg';
 import faqImg from './assets/faq.jpg';
+import firstAppointmentImg from './assets/first-appointment.jpg';
 import {
   Star,
   MapPin,
@@ -12,7 +13,8 @@ import {
   Award,
   Activity,
   ShieldCheck,
-  HeartHandshake
+  HeartHandshake,
+  Check
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -25,8 +27,8 @@ const Navbar = () => {
             <span className="font-bold text-2xl text-gray-900 tracking-tight">Live Right Chiro</span>
           </div>
 
-          <div className="hidden md:flex items-center gap-6">
-            <div className="flex items-center gap-2 text-sm font-medium text-gray-600">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
+            <div className="hidden lg:flex items-center gap-2 text-sm font-medium text-gray-600">
               <span>Excellent</span>
               <div className="flex text-emerald-500">
                 {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
@@ -34,7 +36,7 @@ const Navbar = () => {
               <span className="text-gray-400">|</span>
               <span className="font-semibold text-gray-800">Trustpilot</span>
             </div>
-            <a href="#booking" className="bg-brand hover:bg-brand-dark text-white px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(106,139,141,0.4)]">
+            <a href="#booking" className="bg-brand hover:bg-brand-dark text-white px-4 lg:px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(106,139,141,0.4)] whitespace-nowrap text-sm lg:text-base">
               <Calendar className="h-4 w-4" />
               <span>Arrange An Appointment</span>
             </a>
@@ -296,7 +298,7 @@ const Reviews = () => {
     },
     {
       title: "I definitely recommend Live Right Chiro!",
-      text: "Every visit with Calvin is worth my time driving all the at from west seattle. He listens to my concerns, explains everything clearly, and helps me feel so much better. Provides excellent advice and tools to take home as well. Great experience from start to finish!",
+      text: "Every visit with Dr. Calvin is worth my time driving all the at from west seattle. He listens to my concerns, explains everything clearly, and helps me feel so much better. Provides excellent advice and tools to take home as well. Great experience from start to finish!",
       author: "Marie L."
     }
   ];
@@ -425,23 +427,12 @@ const FAQ = () => {
 };
 
 const Process = () => {
-  const steps = [
-    {
-      title: "Comprehensive consultation and case history",
-      desc: "We take the time to understand your condition by asking about your symptoms, daily habits, medical history, and lifestyle factors."
-    },
-    {
-      title: "Orthopaedic, neurological and chiropractic assessment",
-      desc: "This involves testing joint movement, checking reflexes and muscle strength, evaluating sensory response, and analyzing posture — all to give us a complete picture of how your body is functioning."
-    },
-    {
-      title: "Diagnosis and explanation",
-      desc: "We'll give you a clear, easy-to-understand diagnosis. You'll know what's going on, what's causing the issue, and how we plan to treat it—along with a step-by-step treatment plan and what results to expect."
-    },
-    {
-      title: "Initial treatment (if clinically appropriate)",
-      desc: "Most clients start treatment during their first visit, which may include chiropractic adjustments, soft tissue therapy, joint mobilization, dry needling, or rehab guidance—based on what's best for your condition."
-    }
+  const sessionItems = [
+    "A full exam to understand your body’s needs",
+    "A deep dive into your personal health goals",
+    "Expert supplement recommendations tailored to you",
+    "At-home stretches & release techniques to keep you feeling great",
+    "Full-body chiropractic adjustments to restore balance & relieve tension"
   ];
 
   return (
@@ -449,27 +440,27 @@ const Process = () => {
       <div className="w-full md:w-1/2 bg-brand text-white py-20 md:py-32 px-4 sm:px-6 lg:px-16 xl:px-24 flex flex-col justify-center">
         <h3 className="text-white/80 font-semibold tracking-wider uppercase text-sm mb-3">Your First Appointment</h3>
         <h2 className="text-3xl md:text-5xl font-bold mb-8">What to Expect</h2>
-        <p className="text-white/90 text-lg mb-12 leading-relaxed">
+        <p className="text-white/90 text-lg mb-8 leading-relaxed">
           We don't guess — we assess. Your first session at Live Right Chiro is focused on identifying the root cause of your concern and starting treatment right away (when appropriate). Whether you're dealing with ongoing pain or a recent injury, we approach every case with the same care, attention, and professionalism from the very beginning.
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-x-8 gap-y-12">
-          {steps.map((s, i) => (
-            <div key={i} className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold text-sm">
-                {i + 1}
-              </div>
-              <div>
-                <h4 className="font-bold text-lg mb-2">{s.title}</h4>
-                <p className="text-white/80 text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            </div>
-          ))}
+        <div className="bg-white/10 rounded-2xl p-8 border border-white/20">
+          <h4 className="text-xl font-bold mb-6 text-white text-center">Your 30–45 minute session includes:</h4>
+          <ul className="space-y-4">
+            {sessionItems.map((item, i) => (
+              <li key={i} className="flex gap-4 items-start">
+                <div className="flex-shrink-0 mt-1">
+                  <Check className="w-6 h-6 text-emerald-400" />
+                </div>
+                <span className="text-white/90 text-lg leading-snug">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
       <div className="w-full md:w-1/2 h-[600px] md:h-auto">
         <img
-          src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1000"
+          src={firstAppointmentImg}
           alt="Patient assessment"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
