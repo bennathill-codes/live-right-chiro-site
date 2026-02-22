@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import adjustmentImg from './assets/adjustment.jpg';
 import adjustmentsImg from './assets/adjustments.jpg';
+import faqImg from './assets/faq.jpg';
 import {
   Star,
   MapPin,
@@ -195,72 +196,86 @@ const Services = () => {
   const services = [
     {
       title: "Upper & Lower Back Pain",
-      desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you.",
-      img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
+      desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you."
     },
     {
       title: "Neck Pain",
-      desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease.",
-      img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
+      desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease."
     },
     {
       title: "Postural Correction",
-      desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturallyboosting your energy.",
-      img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=600"
+      desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturally boosting your energy."
     },
     {
       title: "Sciatica Treatment",
-      desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle.",
-      img: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=600"
+      desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle."
     },
     {
       title: "Post Partum",
-      desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one.",
-      img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=600"
+      desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one."
     },
     {
       title: "Pediatric Care",
-      desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience.",
-      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600"
+      desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience."
     }
   ];
 
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
-    <section className="py-20 md:py-32 bg-gray-50">
+    <section className="py-20 md:py-32 bg-gray-50 border-t border-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 md:mb-24">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-px w-12 bg-brand"></div>
             <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Services</h3>
             <div className="h-px w-12 bg-brand"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Conditions We Treat</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">Conditions We Treat</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s, i) => (
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
+          <div className="w-full lg:w-5/12 flex flex-col gap-2">
+            {services.map((s, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                className={`text-left px-6 py-5 rounded-2xl transition-all duration-300 border focus:outline-none ${activeIndex === i
+                  ? 'bg-white border-brand/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-gray-900'
+                  : 'bg-transparent border-transparent text-gray-400 hover:text-gray-600 hover:bg-black/5'
+                  }`}
+              >
+                <div className="flex items-center justify-between">
+                  <h4 className={`text-xl md:text-2xl font-bold tracking-tight transition-all duration-300 ${activeIndex === i ? 'text-brand' : ''}`}>
+                    {s.title}
+                  </h4>
+                  {activeIndex === i && (
+                    <motion.div
+                      layoutId="active-indicator"
+                      className="w-2 h-2 rounded-full bg-brand"
+                    />
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <div className="w-full lg:w-7/12 bg-white rounded-[2rem] p-8 md:p-16 shadow-[0_20px_60px_rgb(0,0,0,0.05)] border border-gray-100 flex items-center min-h-[300px]">
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group"
+              key={activeIndex}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="p-8">
-                <h4 className="text-xl font-bold text-gray-900 mb-3">{s.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{s.desc}</p>
-              </div>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+                {services[activeIndex].title}
+              </h3>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
+                {services[activeIndex].desc}
+              </p>
             </motion.div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
@@ -270,19 +285,19 @@ const Services = () => {
 const Reviews = () => {
   const reviews = [
     {
-      title: "Excellent Quality and Service Back Pain",
-      text: "After just a few sessions, my neck pain and headaches have almost completely disappeared. The chiropractor explained everything clearly and made me feel comfortable from day one.",
-      author: "Jason R."
+      title: "Highly recommend Dr. Calvin if you’re looking for a chiropractor who takes a more holistic approach.",
+      text: "I had some pretty intense back pain the other week—sharp, shooting pain that ran from my left leg up to my lower back and hip. After his assessment and a few adjustments (including work on my T band), I felt a noticeable difference. I can walk more smoothly now, and I'm way more comfortable and pain-free. On top of that, I’ve been taking the supplements I got from his office, and honestly, I haven’t felt this good in a while!",
+      author: "Erin O."
     },
     {
-      title: "Smooth Experience from Start to Finish",
-      text: "The care here is top-notch. They take time to understand your body and tailor treatments to what you really need. My posture has improved so much!",
-      author: "Jessica R."
+      title: "Dr. Calvin is hands down the best chiropractor I’ve been to.",
+      text: "He actually takes the time to figure out what’s going on instead of rushing you in and out like a quick appointment. He explains everything really well—what’s causing the issue, how he’s going to fix it, and even gives you “homework” to keep the progress going between visits. You can tell he knows his stuff and genuinely cares about getting you better, not just giving a quick adjustment and sending you on your way. Highly recommend!",
+      author: "Michael N."
     },
     {
-      title: "Flawless Installation and Great Team",
-      text: "I came in with chronic back pain and walked out feeling like a new person. The team is professional, kind, and really listens to your concerns. Highly recommend!",
-      author: "Adam K."
+      title: "I definitely recommend Live Right Chiro!",
+      text: "Every visit with Calvin is worth my time driving all the at from west seattle. He listens to my concerns, explains everything clearly, and helps me feel so much better. Provides excellent advice and tools to take home as well. Great experience from start to finish!",
+      author: "Marie L."
     }
   ];
 
@@ -295,7 +310,7 @@ const Reviews = () => {
             <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Review</h3>
             <div className="h-px w-12 bg-brand"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">What our customers say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Words From Our Patients</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -324,13 +339,30 @@ const Reviews = () => {
 
 const FAQ = () => {
   const faqs = [
-    "What is chiropractic care?",
-    "Is chiropractic treatment safe?",
-    "Does chiropractic care hurt?",
-    "How many sessions will I need?",
-    "Can chiropractic help with headaches or migraines?",
-    "Do I need a referral to see a chiropractor?",
-    "Is chiropractic care safe during pregnancy?"
+    {
+      question: "What is chiropractic?",
+      answer: "At its core, chiropractic care is about helping your body restore balance, relieve discomfort, and enhance overall well-being without relying on medications or invasive procedures. Whether you're recovering from an injury, managing chronic pain, or simply looking to maintain your health, chiropractic care can be a powerful tool in supporting your journey toward a healthier, more active life.\n\n Chiropractors use hands-on techniques, including spinal adjustments and other treatments, to realign the spine and help the body heal naturally. These adjustments can improve mobility, reduce pain, and support the body’s ability to function optimally. Chiropractic care is not just for back pain—it can also help with headaches, joint pain, stress, posture issues, and so much more."
+    },
+    {
+      question: "Who can benefit from chiropractic care?",
+      answer: "Chiropractic care is beneficial for people of all ages, from infants to seniors. Whether you're a child experiencing growing pains, an adult managing stress or back pain, or a senior looking to improve mobility and reduce joint discomfort, chiropractic care offers a safe, natural approach to improving overall health. It can help with pain relief, posture, mobility, and stress at any stage of life. We're here to support your wellness journey, no matter your age!"
+    },
+    {
+      question: "What is the \"popping\" sound during an adjustment?",
+      answer: "The \"popping\" sound you hear during chiropractic adjustments is typically caused by the release of gas bubbles from the joints. This is known as cavitation.\n\n When a chiropractor applies a gentle, controlled force to a joint, the pressure inside the joint changes. This causes dissolved gases—mainly oxygen, nitrogen, and carbon dioxide—to form bubbles that quickly burst, creating the popping sound. This is completely normal and doesn't indicate that anything is being \"cracked\" or harmed.\n\n The sound itself is harmless and doesn't affect the effectiveness of the adjustment. In fact, many patients report feeling immediate relief and increased mobility after hearing the pop. It's simply a sign that the joint has been properly adjusted, helping to restore function and reduce tension."
+    },
+    {
+      question: "Will I be sore after my adjustment?",
+      answer: "It’s possible to feel some mild soreness after your adjustment, especially if your body is adjusting to new alignment or if it’s been a while since you’ve had chiropractic care. This is typically temporary and should subside within a day or two. Many patients feel immediate relief and improved mobility after their visit, but if you experience any discomfort, it’s usually mild and short-lived."
+    },
+    {
+      question: "Is there a dress code?",
+      answer: "At Live Right Chiro, we ask that all patients wear comfortable, non-restrictive clothing for their visits. Please avoid clothing that is overly revealing, such as tops that expose undergarments or are too low-cut. Similarly, we request that patients avoid extremely baggy or overly restrictive clothing, as it may hinder the effectiveness of your treatment. Our goal is to ensure you feel comfortable and relaxed during your visit while allowing us to provide the best possible care."
+    },
+    {
+      question: "Do we accept insurance?",
+      answer: "At Live Right Chiro, we provide high-quality, personalized chiropractic care as out-of-network providers. While we do not accept insurance directly, we do accept HSA/FSA cards as a form of payment.\n\n If you have insurance, we can provide you with a superbill—an itemized receipt that you can submit to your insurance company for potential reimbursement. If you have any questions about your insurance coverage or the superbill process, please feel free to contact us. We're here to assist you!"
+    },
   ];
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -346,7 +378,7 @@ const FAQ = () => {
             transition={{ duration: 0.8 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
+              src={faqImg}
               alt="Chiropractic consultation"
               className="w-full h-[700px] object-cover rounded-tl-[100px] rounded-br-[100px] shadow-xl"
               referrerPolicy="no-referrer"
@@ -368,18 +400,18 @@ const FAQ = () => {
             </h2>
 
             <div className="space-y-4">
-              {faqs.map((q, i) => (
+              {faqs.map((faqItem, i) => (
                 <div key={i} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
                   <button
                     className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   >
-                    <span className="font-semibold text-gray-900">{q}</span>
+                    <span className="font-semibold text-gray-900">{faqItem.question}</span>
                     <ChevronDown className={`h-5 w-5 text-gray-500 transition-transform ${openIndex === i ? 'rotate-180' : ''}`} />
                   </button>
                   {openIndex === i && (
-                    <div className="px-6 pb-5 text-gray-600 leading-relaxed">
-                      Chiropractic care is a patient-centered, non-invasive, hands-on, regulated health care profession focused on your spine, muscles, joints, and nervous system. We use the best available evidence and clinical expertise to diagnose issues that affect your body's movement.
+                    <div className="px-6 pb-5 text-gray-600 leading-relaxed whitespace-pre-line">
+                      {faqItem.answer}
                     </div>
                   )}
                 </div>
