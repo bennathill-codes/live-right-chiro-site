@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
-  Star, 
-  MapPin, 
-  Phone, 
-  Calendar, 
-  ChevronDown, 
+import adjustmentImg from './assets/adjustment.jpg';
+import adjustmentsImg from './assets/adjustments.jpg';
+import {
+  Star,
+  MapPin,
+  Phone,
+  Calendar,
+  ChevronDown,
   Award,
   Activity,
   ShieldCheck,
@@ -21,7 +23,7 @@ const Navbar = () => {
             <Activity className="h-8 w-8 text-brand" />
             <span className="font-bold text-2xl text-gray-900 tracking-tight">Live Right Chiro</span>
           </div>
-          
+
           <div className="hidden md:flex items-center gap-6">
             <div className="flex items-center gap-2 text-sm font-medium text-gray-600">
               <span>Excellent</span>
@@ -46,33 +48,33 @@ const Hero = () => {
   return (
     <div className="relative bg-gray-900 h-[600px] md:h-[700px] flex items-center">
       <div className="absolute inset-0 overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=2000" 
-          alt="Chiropractic Adjustment" 
+        <img
+          src={adjustmentImg}
+          alt="Chiropractic Adjustment"
           className="w-full h-full object-cover opacity-40"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent"></div>
       </div>
-      
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
           <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-            Same Day Appointments Available
+            Schedule a consultation today!
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-            Experience Lasting Relief and Wellness at Live Right Chiro
+            Move Better.<br />Feel Better.<br /> Live Better.
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
-            At Live Right Chiro, we believe in a holistic approach to health and wellness. Our team of skilled chiropractors is dedicated to helping you achieve optimal health through personalized care and innovative techniques.
+            At Live Right Chiro, our mission is to help you feel your absolute best so you can live life to the fullest. We’re not just about fixing aches and pains—we’re here to get to the root of what’s holding you back and help you move better, feel better, and live better!
           </p>
           <a href="#booking" className="inline-block bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1">
-            Make Appointment
+            Book Appointment
           </a>
         </motion.div>
       </div>
@@ -85,16 +87,16 @@ const About = () => {
     <section className="py-20 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img 
-              src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=800" 
-              alt="Doctor treating patient" 
+            <img
+              src={adjustmentsImg}
+              alt="Doctor treating patient"
               className="w-full h-[600px] object-cover rounded-tl-[100px] rounded-br-[100px] shadow-2xl"
               referrerPolicy="no-referrer"
             />
@@ -104,45 +106,45 @@ const About = () => {
                   <HeartHandshake className="h-8 w-8 text-brand" />
                 </div>
                 <div>
-                  <p className="font-bold text-2xl text-gray-900">10k+</p>
-                  <p className="text-gray-600 font-medium">Patients Healed</p>
+                  {/* <p className="font-bold text-2xl text-gray-900">10k+</p> */}
+                  <p className="text-gray-600 font-medium">Accepting New Patients</p>
                 </div>
               </div>
             </div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-brand font-semibold tracking-wider uppercase text-sm mb-3">About Chiropractic</h3>
+            <h3 className="text-brand font-semibold tracking-wider uppercase text-sm mb-3">About Live Right Chiro</h3>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Your Path to Wellness Starts Here
+              Personalized Care
             </h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed mb-8">
               <p>
-                At Live Right Chiro, we're dedicated to helping you live pain-free and move better through expert chiropractic care. Our mission is to restore your body's natural balance and support your overall well-being.
+                At Live Right Chiropractic, we help individuals and families restore alignment, relieve pain, and stay well naturally. Whether you're dealing with chronic tension, recovering from an injury, or looking for preventative care, we're here to support your journey to better health.
               </p>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-brand">
                 <p className="italic text-gray-700">
-                  "I founded Live Right Chiro after a severe sports injury left me with chronic pain. Traditional medicine offered temporary fixes, but it was chiropractic care that truly restored my life. That profound experience ignited my passion to help others find the same lasting relief. We treat the root cause, not just the symptoms."
+                  "My goal is simple: to provide personalized chiropractic care that targets the root causes of your health challenges. Whether you're recovering from an injury, managing pain, or seeking to improve your mobility, I’m here to help you feel better, move better, and live better."
                 </p>
-                <p className="mt-4 font-semibold text-gray-900">— Dr. Sarah Jenkins, Lead Chiropractor</p>
+                <p className="mt-4 font-semibold text-gray-900">— Dr. Calvin Smolich, Doctor of Chiropractic</p>
               </div>
               <p>
-                With a patient-first approach and years of hands-on experience, we offer personalized treatment plans tailored to your needs. Let us help you get back to living life fully—aligned, active, and pain-free.
+                At Live Right Chiropractic, we focus on full-body wellness through customized care. Our approach combines thorough assessments, hands-on adjustments, and holistic support — including supplements, mobility tools, and at-home techniques.
               </p>
             </div>
-            
+
             <div className="flex flex-wrap gap-4">
               <a href="#booking" className="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(106,139,141,0.4)] hover:shadow-[0_0_25px_rgba(106,139,141,0.5)]">
-                Make Appointment
+                Book Appointment
               </a>
               <a href="tel:+18775556666" className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3.5 rounded-full font-medium transition-colors flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                Call: +1 877 555 6666
+                Call: 206 795 0126
               </a>
             </div>
           </motion.div>
@@ -154,12 +156,12 @@ const About = () => {
 
 const Features = () => {
   const features = [
-    { icon: <Star className="h-8 w-8" />, title: "Google 5★ Rated", desc: "Trusted by CEOs, Performers and Athletes" },
-    { icon: <Award className="h-8 w-8" />, title: "Registered", desc: "Chiropractors and Physiotherapists" },
-    { icon: <HeartHandshake className="h-8 w-8" />, title: "Bespoke Hands-On", desc: "Treatment Plans" },
+    { icon: <Star className="h-8 w-8" />, title: "Google 5★ Rated", desc: "Trusted by your local community" },
+    { icon: <Award className="h-8 w-8" />, title: "Registered", desc: "Doctor of Chiropractic" },
+    { icon: <HeartHandshake className="h-8 w-8" />, title: "Customized Treatment", desc: "Treatment tailored to your needs" },
     { icon: <Activity className="h-8 w-8" />, title: "Evidence-Based Care", desc: "with Real Outcomes" },
+    { icon: <ShieldCheck className="h-8 w-8" />, title: "Personal Care", desc: "Lifestyle and supplement guidance" },
     { icon: <MapPin className="h-8 w-8" />, title: "Central Clinics", desc: "Conveniently Located" },
-    { icon: <ShieldCheck className="h-8 w-8" />, title: "Insurance Accepted", desc: "Bupa, AXA, Aviva, Vitality, Cigna" },
   ];
 
   return (
@@ -168,7 +170,7 @@ const Features = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Live Right Chiro?</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
           {features.map((f, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -192,34 +194,34 @@ const Features = () => {
 const Services = () => {
   const services = [
     {
-      title: "Back Pain",
-      desc: "Whether it's chronic or acute, our chiropractic adjustments can help alleviate your back pain, improving your mobility and quality of life.",
+      title: "Upper & Lower Back Pain",
+      desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you.",
       img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600"
     },
     {
       title: "Neck Pain",
-      desc: "Whether it's chronic or acute, our chiropractic adjustments can help alleviate your neck pain, improving your mobility and quality of life.",
+      desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease.",
       img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=600"
     },
     {
-      title: "Sports Injuries",
-      desc: "Whether it's chronic or acute, our chiropractic adjustments can help alleviate your sports injuries, improving your mobility and quality of life.",
+      title: "Postural Correction",
+      desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturallyboosting your energy.",
       img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&q=80&w=600"
     },
     {
-      title: "Physio Therapy",
-      desc: "Whether it's chronic or acute, our chiropractic adjustments can help alleviate your back pain, improving your mobility and quality of life.",
-      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600"
+      title: "Sciatica Treatment",
+      desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle.",
+      img: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=600"
     },
     {
-      title: "Spinal Adjustments",
-      desc: "Gentle, targeted adjustments to realign your spine, relieve pressure, and improve mobility.",
+      title: "Post Partum",
+      desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one.",
       img: "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=600"
     },
     {
-      title: "Sciatica Treatment",
-      desc: "Targeted therapies to relieve nerve pressure, reduce inflammation, and ease leg and lower back pain.",
-      img: "https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&q=80&w=600"
+      title: "Pediatric Care",
+      desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience.",
+      img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=600"
     }
   ];
 
@@ -232,12 +234,12 @@ const Services = () => {
             <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Services</h3>
             <div className="h-px w-12 bg-brand"></div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Chiropractic Conditions We Treat</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Conditions We Treat</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -246,9 +248,9 @@ const Services = () => {
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group"
             >
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={s.img} 
-                  alt={s.title} 
+                <img
+                  src={s.img}
+                  alt={s.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -298,7 +300,7 @@ const Reviews = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {reviews.map((r, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -337,20 +339,20 @@ const FAQ = () => {
     <section className="py-20 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-start">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <img 
-              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" 
-              alt="Chiropractic consultation" 
+            <img
+              src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
+              alt="Chiropractic consultation"
               className="w-full h-[700px] object-cover rounded-tl-[100px] rounded-br-[100px] shadow-xl"
               referrerPolicy="no-referrer"
             />
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -364,11 +366,11 @@ const FAQ = () => {
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-10 leading-tight">
               Frequently Asked Questions
             </h2>
-            
+
             <div className="space-y-4">
               {faqs.map((q, i) => (
                 <div key={i} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
-                  <button 
+                  <button
                     className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   >
@@ -434,9 +436,9 @@ const Process = () => {
         </div>
       </div>
       <div className="w-full md:w-1/2 h-[600px] md:h-auto">
-        <img 
-          src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1000" 
-          alt="Patient assessment" 
+        <img
+          src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=1000"
+          alt="Patient assessment"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
@@ -449,15 +451,15 @@ const BookingForm = () => {
   return (
     <section id="booking" className="relative py-24 md:py-32 flex items-center justify-center">
       <div className="absolute inset-0 overflow-hidden">
-        <img 
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
-          alt="Clinic background" 
+        <img
+          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000"
+          alt="Clinic background"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm"></div>
       </div>
-      
+
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         <div className="flex items-center justify-center gap-4 mb-4">
           <div className="h-px w-12 bg-brand"></div>
@@ -465,32 +467,32 @@ const BookingForm = () => {
           <div className="h-px w-12 bg-brand"></div>
         </div>
         <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">Book an Appointment Today</h2>
-        
+
         <form className="bg-white/10 backdrop-blur-md p-8 md:p-10 rounded-2xl border border-white/20 shadow-2xl">
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <input 
-              type="text" 
-              placeholder="Name" 
+            <input
+              type="text"
+              placeholder="Name"
               className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow"
             />
-            <input 
-              type="tel" 
-              placeholder="Phone Number" 
+            <input
+              type="tel"
+              placeholder="Phone Number"
               className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow"
             />
           </div>
-          <input 
-            type="email" 
-            placeholder="Email" 
+          <input
+            type="email"
+            placeholder="Email"
             className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow mb-6"
           />
-          <textarea 
-            placeholder="Any special requests?" 
+          <textarea
+            placeholder="Any special requests?"
             rows={4}
             className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow mb-8 resize-none"
           ></textarea>
-          
-          <button 
+
+          <button
             type="button"
             className="bg-brand hover:bg-brand-dark text-white px-10 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1"
           >
