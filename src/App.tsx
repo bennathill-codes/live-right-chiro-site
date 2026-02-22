@@ -47,7 +47,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <div className="relative bg-gray-900 h-[600px] md:h-[700px] flex items-center">
+    <div className="relative bg-gray-900 min-h-[calc(100vh-5rem)] flex items-center">
       <div className="absolute inset-0 overflow-hidden">
         <img
           src={adjustmentImg}
@@ -85,7 +85,7 @@ const Hero = () => {
 
 const About = () => {
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white min-h-screen flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
           <motion.div
@@ -223,7 +223,7 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50 border-t border-gray-50">
+    <section className="py-20 md:py-32 bg-gray-50 border-t border-gray-50 min-h-screen flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-24">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -302,7 +302,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-white">
+    <section className="py-20 md:py-32 bg-white min-h-screen flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
@@ -368,7 +368,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50">
+    <section className="py-20 md:py-32 bg-gray-50 min-h-screen flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-start">
           <motion.div
@@ -445,7 +445,7 @@ const Process = () => {
   ];
 
   return (
-    <section className="flex flex-col md:flex-row">
+    <section className="flex flex-col md:flex-row min-h-screen">
       <div className="w-full md:w-1/2 bg-brand text-white py-20 md:py-32 px-4 sm:px-6 lg:px-16 xl:px-24 flex flex-col justify-center">
         <h3 className="text-white/80 font-semibold tracking-wider uppercase text-sm mb-3">Your First Appointment</h3>
         <h2 className="text-3xl md:text-5xl font-bold mb-8">What to Expect</h2>
@@ -481,7 +481,7 @@ const Process = () => {
 
 const BookingForm = () => {
   return (
-    <section id="booking" className="relative py-24 md:py-32 flex items-center justify-center">
+    <section id="booking" className="relative py-24 md:py-32 flex items-center justify-center min-h-screen">
       <div className="absolute inset-0 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000"
