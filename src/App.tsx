@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import adjustmentImg from './assets/adjustment.jpg';
 import adjustmentsImg from './assets/adjustments.jpg';
@@ -14,7 +16,9 @@ import {
   Activity,
   ShieldCheck,
   HeartHandshake,
-  Check
+  Check,
+  Clock,
+  Mail
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -22,10 +26,10 @@ const Navbar = () => {
     <nav className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0 flex items-center gap-2">
+          <Link to="/" className="flex-shrink-0 flex items-center gap-2 hover:opacity-90 transition-opacity">
             <Activity className="h-8 w-8 text-brand" />
             <span className="font-bold text-2xl text-gray-900 tracking-tight">Live Right Chiro</span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
             <div className="hidden lg:flex items-center gap-2 text-sm font-medium text-gray-600">
@@ -36,9 +40,9 @@ const Navbar = () => {
               <span className="text-gray-400">|</span>
               <span className="font-semibold text-gray-800">Trustpilot</span>
             </div>
-            <a href="#booking" className="bg-brand hover:bg-brand-dark text-white px-4 lg:px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(106,139,141,0.4)] whitespace-nowrap text-sm lg:text-base">
+            <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="bg-brand hover:bg-brand-dark text-white px-4 lg:px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(106,139,141,0.4)] whitespace-nowrap text-sm lg:text-base">
               <Calendar className="h-4 w-4" />
-              <span>Arrange An Appointment</span>
+              <span>Schedule Initial Consultation</span>
             </a>
           </div>
         </div>
@@ -76,7 +80,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
             At Live Right Chiro, our mission is to help you feel your absolute best so you can live life to the fullest. We’re not just about fixing aches and pains—we’re here to get to the root of what’s holding you back and help you move better, feel better, and live better!
           </p>
-          <a href="#booking" className="inline-block bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1">
+          <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1">
             Book Appointment
           </a>
         </motion.div>
@@ -132,7 +136,7 @@ const About = () => {
               </p>
               <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-brand">
                 <p className="italic text-gray-700">
-                  "My goal is simple: to provide personalized chiropractic care that targets the root causes of your health challenges. Whether you're recovering from an injury, managing pain, or seeking to improve your mobility, I’m here to help you feel better, move better, and live better."
+                  "My goal is simple: to provide personalized chiropractic care that targets the root causes of your health challenges. Whether you're recovering from an injury, managing pain, or seeking to improve your mobility. I’m here to help you feel better, move better, and live better."
                 </p>
                 <p className="mt-4 font-semibold text-gray-900">— Dr. Calvin Smolich, Doctor of Chiropractic</p>
               </div>
@@ -142,7 +146,7 @@ const About = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#booking" className="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(106,139,141,0.4)] hover:shadow-[0_0_25px_rgba(106,139,141,0.5)]">
+              <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(106,139,141,0.4)] hover:shadow-[0_0_25px_rgba(106,139,141,0.5)]">
                 Book Appointment
               </a>
               <a href="tel:+18775556666" className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3.5 rounded-full font-medium transition-colors flex items-center gap-2">
@@ -159,19 +163,18 @@ const About = () => {
 
 const Features = () => {
   const features = [
-    { icon: <Star className="h-8 w-8" />, title: "Google 5★ Rated", desc: "Trusted by your local community" },
     { icon: <Award className="h-8 w-8" />, title: "Registered", desc: "Doctor of Chiropractic" },
     { icon: <HeartHandshake className="h-8 w-8" />, title: "Customized Treatment", desc: "Treatment tailored to your needs" },
-    { icon: <Activity className="h-8 w-8" />, title: "Evidence-Based Care", desc: "with Real Outcomes" },
+    { icon: <Star className="h-8 w-8" />, title: "Google 5★ Rated", desc: "Trusted by your local community" },
     { icon: <ShieldCheck className="h-8 w-8" />, title: "Personal Care", desc: "Lifestyle and supplement guidance" },
-    { icon: <MapPin className="h-8 w-8" />, title: "Central Clinics", desc: "Conveniently Located" },
+    { icon: <MapPin className="h-8 w-8" />, title: "Central Clinic", desc: "Conveniently Located" },
   ];
 
   return (
     <section className="py-16 bg-brand text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Live Right Chiro?</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-x-12 gap-y-10 text-center">
           {features.map((f, i) => (
             <motion.div
               key={i}
@@ -179,7 +182,7 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center w-[calc(50%-1rem)] md:w-[calc(33.33%-2rem)] lg:flex-1 min-w-[140px] max-w-[220px]"
             >
               <div className="mb-4 text-white/90">
                 {f.icon}
@@ -394,11 +397,11 @@ const FAQ = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center gap-4 mb-4">
-              <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">FAQ</h3>
+              <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Frequently Asked Questions</h3>
               <div className="h-px w-12 bg-brand"></div>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-10 leading-tight">
-              Frequently Asked Questions
+              FAQ
             </h2>
 
             <div className="space-y-4">
@@ -470,58 +473,86 @@ const Process = () => {
   );
 };
 
-const BookingForm = () => {
+const Location = () => {
   return (
-    <section id="booking" className="relative py-24 md:py-32 flex items-center justify-center min-h-screen">
-      <div className="absolute inset-0 overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000"
-          alt="Clinic background"
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm"></div>
-      </div>
-
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        <div className="flex items-center justify-center gap-4 mb-4">
-          <div className="h-px w-12 bg-brand"></div>
-          <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Get Started</h3>
-          <div className="h-px w-12 bg-brand"></div>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">Book an Appointment Today</h2>
-
-        <form className="bg-white/10 backdrop-blur-md p-8 md:p-10 rounded-2xl border border-white/20 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <input
-              type="text"
-              placeholder="Name"
-              className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow"
-            />
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow"
-            />
+    <section id="location" className="py-24 md:py-32 bg-gray-50 min-h-screen flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-12 bg-brand"></div>
+            <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Visit Us</h3>
+            <div className="h-px w-12 bg-brand"></div>
           </div>
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow mb-6"
-          />
-          <textarea
-            placeholder="Any special requests?"
-            rows={4}
-            className="w-full bg-white px-5 py-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand transition-shadow mb-8 resize-none"
-          ></textarea>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Hours & Location</h2>
+        </div>
 
-          <button
-            type="button"
-            className="bg-brand hover:bg-brand-dark text-white px-10 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1"
-          >
-            Arrange an appointment
-          </button>
-        </form>
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="bg-white rounded-2xl shadow-xl shadow-brand/5 border border-gray-100 p-8 md:p-12 flex flex-col justify-center">
+
+            <div className="space-y-8">
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-brand" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl text-gray-900 mb-2">Our Clinic</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    1500 Benson Road S Suite 202<br />
+                    Renton, WA 98055
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-brand" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-xl text-gray-900 mb-2">Contact</h4>
+                  <p className="text-gray-600 leading-relaxed">
+                    (206) 795-0126<br />
+                    info@liverightchiro.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-brand" />
+                </div>
+                <div className="w-full">
+                  <h4 className="font-bold text-xl text-gray-900 mb-2">Business Hours</h4>
+                  <ul className="space-y-2 text-gray-600 w-full max-w-sm">
+                    <li className="flex justify-between"><span>Thursday</span><span className="font-medium text-gray-900">2:00 PM - 4:00 PM</span></li>
+                    <li className="flex justify-between"><span>Friday</span><span className="font-medium text-gray-900">10:00 AM - 6:00 PM</span></li>
+                    <li className="flex justify-between"><span>Saturday</span><span className="font-medium text-gray-900">10:00 AM - 2:00 PM</span></li>
+                    <li className="flex justify-between"><span>Monday-Wednesday & Sunday</span><span className="font-medium text-gray-900">Closed</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 pt-8 border-t border-gray-100">
+              <a href="tel:+12065550123" className="w-full inline-block text-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:-translate-y-1">
+                Call to Book Your Visit
+              </a>
+            </div>
+          </div>
+
+          <div className="h-[400px] lg:h-auto w-full min-h-[400px] rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 relative">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.1587147733503!2d-122.20829988786016!3d47.46733649746342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905d456491ae49%3A0xfda9e5156d006533!2sAltitude%20Business%20Center%2C%201500%20Benson%20Rd%20S%20Suite%20202%2C%20Renton%2C%20WA%2098055!5e0!3m2!1sen!2sus!4v1771827915625!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+              title="Clinic Location"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -535,21 +566,33 @@ const Footer = () => {
   );
 };
 
+const Home = () => {
+  return (
+    <main>
+      <Hero />
+      <About />
+      <Features />
+      <Services />
+      <Reviews />
+      <FAQ />
+      <Process />
+      <Location />
+    </main>
+  );
+};
+
 export default function App() {
   return (
-    <div className="min-h-screen bg-white selection:bg-brand selection:text-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Features />
-        <Services />
-        <Reviews />
-        <FAQ />
-        <Process />
-        <BookingForm />
-      </main>
-      <Footer />
-    </div>
+    <HelmetProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-white selection:bg-brand selection:text-white">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
