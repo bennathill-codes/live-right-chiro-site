@@ -107,7 +107,15 @@ const About = () => {
               className="w-full h-[600px] object-cover rounded-tl-[100px] rounded-br-[100px] shadow-2xl"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100">
+            <motion.div
+              animate={{ x: [0, 8, 0] }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-xl hidden md:block border border-gray-100"
+            >
               <div className="flex items-center gap-4">
                 <div className="bg-brand/10 p-4 rounded-full">
                   <HeartHandshake className="h-8 w-8 text-brand" />
@@ -117,7 +125,7 @@ const About = () => {
                   <p className="text-gray-600 font-medium">Accepting New Patients</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
 
           <motion.div
