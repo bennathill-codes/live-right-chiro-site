@@ -25,6 +25,7 @@ import {
 
 // New Imports
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import HealthDataPrivacy from './pages/legal/HealthDataPrivacy';
 import TermsOfService from './pages/legal/TermsOfService';
@@ -724,6 +725,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <div className="min-h-screen bg-white selection:bg-brand selection:text-white">
           <Navbar />
           <Routes>

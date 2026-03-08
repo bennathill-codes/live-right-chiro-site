@@ -90,9 +90,6 @@ const Footer = () => {
           <div className="text-gray-500 text-sm md:text-base flex flex-col md:flex-row items-center gap-2">
             <span>&copy; {new Date().getFullYear()} Live Right Chiro.</span>
             <span className="hidden md:inline">All Rights Reserved.</span>
-            <span className="md:ml-4 flex items-center gap-1.5 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
-              Built for Wellness
-            </span>
           </div>
         </div>
       </div>
