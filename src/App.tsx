@@ -23,6 +23,12 @@ import {
   Mail
 } from 'lucide-react';
 
+// New Imports
+import Footer from './components/Footer';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import HealthDataPrivacy from './pages/legal/HealthDataPrivacy';
+import TermsOfService from './pages/legal/TermsOfService';
+
 const Navbar = () => {
   return (
     <nav className="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
@@ -220,6 +226,30 @@ const Services = () => {
     {
       title: "Postural Correction",
       desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturally boosting your energy."
+    },
+    {
+      title: "Knee & Foot Pain",
+      desc: "fill"
+    },
+    {
+      title: "Headaches & Migraines",
+      desc: "fill"
+    },
+    {
+      title: "Carpal Tunnel Syndrome",
+      desc: "fill"
+    },
+    {
+      title: "Whiplash",
+      desc: "fill"
+    },
+    {
+      title: "Plantar Fasciitis",
+      desc: "fill"
+    },
+    {
+      title: "TMJ Pain",
+      desc: "fill"
     },
     {
       title: "Sciatica Treatment",
@@ -617,13 +647,7 @@ const Location = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-gray-400 py-8 text-center border-t border-gray-800">
-      <p>&copy; {new Date().getFullYear()} Live Right Chiro. All Rights Reserved.</p>
-    </footer>
-  );
-};
+
 
 const Home = () => {
   return (
@@ -648,6 +672,9 @@ export default function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/health-data-privacy" element={<HealthDataPrivacy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
           <Footer />
         </div>
