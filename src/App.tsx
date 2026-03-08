@@ -214,58 +214,79 @@ const Features = () => {
 };
 
 const Services = () => {
-  const services = [
+  const serviceCategories = [
     {
-      title: "Upper & Lower Back Pain",
-      desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you."
+      title: "Spinal & Joint Pain",
+      items: [
+        {
+          title: "Upper & Lower Back Pain",
+          desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you."
+        },
+        {
+          title: "Neck Pain",
+          desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease."
+        },
+        {
+          title: "Knee & Foot Pain",
+          desc: "Chiropractic care can help address mechanical issues in the feet and knees, ensuring proper joint alignment and relieving strain to improve your overall gait and comfort."
+        },
+        {
+          title: "Sciatica Treatment",
+          desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle."
+        },
+      ]
     },
     {
-      title: "Neck Pain",
-      desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease."
+      title: "Head, Neck & Jaw Conditions",
+      items: [
+        {
+          title: "Headaches & Migraines",
+          desc: "Targeted adjustments help reduce the frequency and intensity of headaches and migraines by addressing cervical tension and nerve irritation in the upper spine."
+        },
+        {
+          title: "TMJ Pain",
+          desc: "Gentle chiropractic techniques can help align the jaw and neck, relieving the tension and pain associated with Temporomandibular Joint (TMJ) disorders."
+        },
+        {
+          title: "Whiplash",
+          desc: "Post-accident care focused on restoring mobility and reducing inflammation in the cervical spine to help your body recover effectively from whiplash injuries."
+        },
+      ]
     },
     {
-      title: "Postural Correction",
-      desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturally boosting your energy."
+      title: "Nerve & Extremity Syndromes",
+      items: [
+        {
+          title: "Carpal Tunnel Syndrome",
+          desc: "By addressing nerve compression in the wrist, elbow, or neck, chiropractic care can help alleviate the numbness, tingling, and pain of carpal tunnel syndrome."
+        },
+        {
+          title: "Plantar Fasciitis",
+          desc: "Adjustments to the foot and ankle, combined with mobility guidance, help relieve the tension on the plantar fascia and restore comfortable movement."
+        },
+      ]
     },
     {
-      title: "Knee & Foot Pain",
-      desc: "fill"
-    },
-    {
-      title: "Headaches & Migraines",
-      desc: "fill"
-    },
-    {
-      title: "Carpal Tunnel Syndrome",
-      desc: "fill"
-    },
-    {
-      title: "Whiplash",
-      desc: "fill"
-    },
-    {
-      title: "Plantar Fasciitis",
-      desc: "fill"
-    },
-    {
-      title: "TMJ Pain",
-      desc: "fill"
-    },
-    {
-      title: "Sciatica Treatment",
-      desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle."
-    },
-    {
-      title: "Post Partum",
-      desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one."
-    },
-    {
-      title: "Pediatric Care",
-      desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience."
+      title: "Specialized & Preventative Care",
+      items: [
+        {
+          title: "Postural Care",
+          desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturally boosting your energy."
+        },
+        {
+          title: "Post Partum",
+          desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one."
+        },
+        {
+          title: "Pediatric Care",
+          desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience."
+        }
+      ]
     }
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [openCategoryIndex, setOpenCategoryIndex] = useState<number | null>(0);
+  const [activeCondition, setActiveCondition] = useState(serviceCategories[0].items[0]);
 
   return (
     <section className="py-20 md:py-32 bg-gray-50 border-t border-gray-50 min-h-screen flex flex-col justify-center">
@@ -280,44 +301,79 @@ const Services = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
-          <div className="w-full lg:w-5/12 flex flex-col gap-2">
-            {services.map((s, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                className={`text-left px-6 py-5 rounded-2xl transition-all duration-300 border focus:outline-none ${activeIndex === i
-                  ? 'bg-white border-brand/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-gray-900'
-                  : 'bg-transparent border-transparent text-gray-400 hover:text-gray-600 hover:bg-black/5'
-                  }`}
-              >
-                <div className="flex items-center justify-between">
-                  <h4 className={`text-xl md:text-2xl font-bold tracking-tight transition-all duration-300 ${activeIndex === i ? 'text-brand' : ''}`}>
-                    {s.title}
-                  </h4>
-                  {activeIndex === i && (
-                    <motion.div
-                      layoutId="active-indicator"
-                      className="w-2 h-2 rounded-full bg-brand"
-                    />
-                  )}
+          <div className="w-full lg:w-5/12 flex flex-col gap-4">
+            {serviceCategories.map((category, catIdx) => (
+              <div key={catIdx} className="flex flex-col gap-2">
+                <button
+                  onClick={() => {
+                    const isOpening = openCategoryIndex !== catIdx;
+                    setOpenCategoryIndex(isOpening ? catIdx : null);
+                    if (isOpening) {
+                      setActiveCondition(category.items[0]);
+                    }
+                  }}
+                  className={`w-full text-left px-6 py-4 rounded-2xl transition-all duration-300 flex items-center justify-between border ${openCategoryIndex === catIdx
+                    ? 'bg-brand/5 border-brand/20 text-brand shadow-sm'
+                    : 'bg-white border-gray-100 text-gray-700 hover:border-brand/30 hover:bg-brand/[0.02]'
+                    }`}
+                >
+                  <span className="text-lg font-bold tracking-tight">{category.title}</span>
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${openCategoryIndex === catIdx ? 'rotate-180' : ''}`} />
+                </button>
+
+                <div className="overflow-hidden">
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: openCategoryIndex === catIdx ? 'auto' : 0,
+                      opacity: openCategoryIndex === catIdx ? 1 : 0
+                    }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col gap-2"
+                  >
+                    <div className="pt-2 pb-4 pl-4 flex flex-col gap-1 border-l-2 border-brand/10 ml-6">
+                      {category.items.map((item, itemIdx) => (
+                        <button
+                          key={itemIdx}
+                          onClick={() => setActiveCondition(item)}
+                          className={`text-left px-5 py-3 rounded-xl transition-all duration-300 border focus:outline-none ${activeCondition.title === item.title
+                            ? 'bg-white border-brand/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] text-gray-900'
+                            : 'bg-transparent border-transparent text-gray-400 hover:text-gray-600 hover:bg-black/5'
+                            }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <h4 className={`text-base md:text-lg font-bold tracking-tight transition-all duration-300 ${activeCondition.title === item.title ? 'text-brand' : ''}`}>
+                              {item.title}
+                            </h4>
+                            {activeCondition.title === item.title && (
+                              <motion.div
+                                layoutId="active-indicator"
+                                className="w-2 h-2 rounded-full bg-brand"
+                              />
+                            )}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
                 </div>
-              </button>
+              </div>
             ))}
           </div>
 
           <div className="w-full lg:w-7/12 bg-white rounded-[2rem] p-8 md:p-16 shadow-[0_20px_60px_rgb(0,0,0,0.05)] border border-gray-100 flex items-center min-h-[300px]">
             <motion.div
-              key={activeIndex}
+              key={activeCondition.title}
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="w-full"
             >
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight">
-                {services[activeIndex].title}
+                {activeCondition.title}
               </h3>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
-                {services[activeIndex].desc}
+                {activeCondition.desc === "fill" ? "Specialized care tailored to your specific biomechanical needs, helping you recover function and alleviate discomfort." : activeCondition.desc}
               </p>
             </motion.div>
           </div>
