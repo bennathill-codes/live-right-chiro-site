@@ -6,6 +6,8 @@ import adjustmentImg from './assets/adjustment.jpg';
 import adjustmentsImg from './assets/adjustments.jpg';
 import faqImg from './assets/faq.jpg';
 import firstAppointmentImg from './assets/first-appointment.jpg';
+import lrc2Img from './assets/lrc2.webp';
+import lrcImg from './assets/lrc.jpg';
 import {
   Star,
   MapPin,
@@ -149,7 +151,7 @@ const About = () => {
                 <p className="mt-4 font-semibold text-gray-900">— Dr. Calvin Smolich, Doctor of Chiropractic</p>
               </div>
               <p>
-                At Live Right Chiropractic, we focus on full-body wellness through customized care. Our approach combines thorough assessments, hands-on adjustments, and holistic support — including supplements, mobility tools, and at-home techniques.
+                We focus on full-body wellness through customized care. Our approach combines thorough assessments, hands-on adjustments, and holistic support — including supplements, mobility tools, and at-home techniques.
               </p>
             </div>
 
@@ -469,13 +471,62 @@ const Process = () => {
           </ul>
         </div>
       </div>
-      <div className="w-full md:w-1/2 h-[600px] md:h-auto">
-        <img
-          src={firstAppointmentImg}
-          alt="Patient assessment"
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
+      <div className="w-full md:w-1/2 bg-gray-50 flex items-center justify-center p-4 md:p-12 lg:p-16">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-4 md:gap-6 w-full h-[600px] md:h-[700px]">
+          {/* Main Large Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.01 }}
+            className="col-span-2 md:col-span-7 md:row-span-2 relative group overflow-hidden rounded-3xl shadow-xl border border-white/10"
+          >
+            <img
+              src={firstAppointmentImg}
+              alt="Patient assessment"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          </motion.div>
+
+          {/* Secondary Image Top */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.02 }}
+            className="col-span-1 md:col-span-5 relative group overflow-hidden rounded-3xl shadow-lg border border-white/10"
+          >
+            <img
+              src={lrcImg}
+              alt="Clinic interior"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </motion.div>
+
+          {/* Secondary Image Bottom */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ scale: 1.02 }}
+            className="col-span-1 md:col-span-5 relative group overflow-hidden rounded-3xl shadow-lg border border-white/10"
+          >
+            <img
+              src={lrc2Img}
+              alt="Adjustment technique"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
