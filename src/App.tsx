@@ -20,7 +20,8 @@ import {
   HeartHandshake,
   Check,
   Clock,
-  Mail
+  Mail,
+  Map
 } from 'lucide-react';
 
 // New Imports
@@ -29,6 +30,18 @@ import ScrollToTop from './components/ScrollToTop';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import HealthDataPrivacy from './pages/legal/HealthDataPrivacy';
 import TermsOfService from './pages/legal/TermsOfService';
+import BackPain from './pages/services/BackPain';
+import NeckPain from './pages/services/NeckPain';
+import KneeFootPain from './pages/services/KneeFootPain';
+import Sciatica from './pages/services/Sciatica';
+import HeadachesMigraines from './pages/services/HeadachesMigraines';
+import TMJPain from './pages/services/TMJPain';
+import Whiplash from './pages/services/Whiplash';
+import CarpalTunnel from './pages/services/CarpalTunnel';
+import PlantarFasciitis from './pages/services/PlantarFasciitis';
+import PosturalCare from './pages/services/PosturalCare';
+import PostPartum from './pages/services/PostPartum';
+import PediatricCare from './pages/services/PediatricCare';
 
 const Navbar = () => {
   return (
@@ -51,7 +64,7 @@ const Navbar = () => {
             </div>
             <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="bg-brand hover:bg-brand-dark text-white px-4 lg:px-6 py-2.5 rounded-full font-medium transition-colors flex items-center gap-2 shadow-[0_0_15px_rgba(106,139,141,0.4)] whitespace-nowrap text-sm lg:text-base">
               <Calendar className="h-4 w-4" />
-              <span>Schedule Initial Consultation</span>
+              <span>Book Appointment</span>
             </a>
           </div>
         </div>
@@ -89,9 +102,15 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed">
             At Live Right Chiro, our mission is to help you feel your absolute best so you can live life to the fullest. We’re not just about fixing aches and pains—we’re here to get to the root of what’s holding you back and help you move better, feel better, and live better!
           </p>
-          <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1">
-            Book Appointment
-          </a>
+          <div className="flex flex-col items-start gap-3">
+            <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:shadow-[0_0_30px_rgba(106,139,141,0.6)] hover:-translate-y-1">
+              Schedule Initial Consultation
+            </a>
+            <p className="text-sm text-gray-300 flex items-center gap-2 mt-1">
+              <Clock className="h-4 w-4 text-brand-light" />
+              <span>Inquiries responded to within 2 business hours</span>
+            </p>
+          </div>
         </motion.div>
       </div>
     </div>
@@ -162,14 +181,20 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-              <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(106,139,141,0.4)] hover:shadow-[0_0_25px_rgba(106,139,141,0.5)]">
-                Book Appointment
-              </a>
-              <a href="tel:+18775556666" className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3.5 rounded-full font-medium transition-colors flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                Call: 206 795 0126
-              </a>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap gap-4">
+                <a href="https://liverightchiro.janeapp.com/" target="_blank" rel="noopener noreferrer" className="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 rounded-full font-medium transition-all shadow-[0_0_15px_rgba(106,139,141,0.4)] hover:shadow-[0_0_25px_rgba(106,139,141,0.5)]">
+                  Book Appointment
+                </a>
+                <a href="tel:+12067950126" className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3.5 rounded-full font-medium transition-colors flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Call: 206 795 0126
+                </a>
+              </div>
+              <p className="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <Clock className="h-4 w-4 text-brand" />
+                <span>Inquiries responded to within 2 business hours</span>
+              </p>
             </div>
           </motion.div>
         </div>
@@ -221,19 +246,23 @@ const Services = () => {
       items: [
         {
           title: "Upper & Lower Back Pain",
-          desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you."
+          desc: "Chiropractic care for upper and lower back pain restores proper spinal alignment and nerve function, allowing you to reclaim your mobility and live a pain-free life focused on what matters most to you.",
+          link: "/services/back-pain"
         },
         {
           title: "Neck Pain",
-          desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease."
+          desc: "To relieve chronic tension and restore a full range of motion, helping you eliminate headaches and discomfort so you can move through your day with clarity and ease.",
+          link: "/services/neck-pain"
         },
         {
           title: "Knee & Foot Pain",
-          desc: "Chiropractic care can help address mechanical issues in the feet and knees, ensuring proper joint alignment and relieving strain to improve your overall gait and comfort."
+          desc: "Chiropractic care can help address mechanical issues in the feet and knees, ensuring proper joint alignment and relieving strain to improve your overall gait and comfort.",
+          link: "/services/knee-foot-pain"
         },
         {
           title: "Sciatica Treatment",
-          desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle."
+          desc: "Focuses on relieving the mechanical pressure and nerve irritation at the source, providing drug-free pain relief that restores leg strength and helps you return to an active lifestyle.",
+          link: "/services/sciatica"
         },
       ]
     },
@@ -242,15 +271,18 @@ const Services = () => {
       items: [
         {
           title: "Headaches & Migraines",
-          desc: "Targeted adjustments help reduce the frequency and intensity of headaches and migraines by addressing cervical tension and nerve irritation in the upper spine."
+          desc: "Targeted adjustments help reduce the frequency and intensity of headaches and migraines by addressing cervical tension and nerve irritation in the upper spine.",
+          link: "/services/headaches-migraines"
         },
         {
           title: "TMJ Pain",
-          desc: "Gentle chiropractic techniques can help align the jaw and neck, relieving the tension and pain associated with Temporomandibular Joint (TMJ) disorders."
+          desc: "Gentle chiropractic techniques can help align the jaw and neck, relieving the tension and pain associated with Temporomandibular Joint (TMJ) disorders.",
+          link: "/services/tmj-pain"
         },
         {
           title: "Whiplash",
-          desc: "Post-accident care focused on restoring mobility and reducing inflammation in the cervical spine to help your body recover effectively from whiplash injuries."
+          desc: "Post-accident care focused on restoring mobility and reducing inflammation in the cervical spine to help your body recover effectively from whiplash injuries.",
+          link: "/services/whiplash"
         },
       ]
     },
@@ -259,11 +291,13 @@ const Services = () => {
       items: [
         {
           title: "Carpal Tunnel Syndrome",
-          desc: "By addressing nerve compression in the wrist, elbow, or neck, chiropractic care can help alleviate the numbness, tingling, and pain of carpal tunnel syndrome."
+          desc: "By addressing nerve compression in the wrist, elbow, or neck, chiropractic care can help alleviate the numbness, tingling, and pain of carpal tunnel syndrome.",
+          link: "/services/carpal-tunnel"
         },
         {
           title: "Plantar Fasciitis",
-          desc: "Adjustments to the foot and ankle, combined with mobility guidance, help relieve the tension on the plantar fascia and restore comfortable movement."
+          desc: "Adjustments to the foot and ankle, combined with mobility guidance, help relieve the tension on the plantar fascia and restore comfortable movement.",
+          link: "/services/plantar-fasciitis"
         },
       ]
     },
@@ -271,16 +305,19 @@ const Services = () => {
       title: "Specialized & Preventative Care",
       items: [
         {
-          title: "Postural Care",
-          desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturally boosting your energy."
+          title: "Postural Correction",
+          desc: "Personalized postural correction identifies and fixes the underlying spinal misalignments caused by daily habits, transforming your stance to eliminate chronic strain and naturally boosting your energy.",
+          link: "/services/postural-care"
         },
         {
-          title: "Post Partum",
-          desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one."
+          title: "Postpartum",
+          desc: "Gentle postpartum chiropractic care supports your body’s natural recovery by restoring pelvic stability and relieving the physical strain of newborn care, helping you regain your strength and comfort so you can focus fully on bonding with your little one.",
+          link: "/services/postpartum"
         },
         {
-          title: "Pediatric Care",
-          desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience."
+          title: "Pediatric",
+          desc: "Supports your child's developing nervous system and physical growth by ensuring proper joint mechanics, helping them thrive through every milestone from infancy to adolescence with greater comfort and resilience.",
+          link: "/services/pediatric-care"
         }
       ]
     }
@@ -376,6 +413,17 @@ const Services = () => {
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
                 {activeCondition.desc === "fill" ? "Specialized care tailored to your specific biomechanical needs, helping you recover function and alleviate discomfort." : activeCondition.desc}
               </p>
+              {activeCondition.link && (
+                <div className="mt-6">
+                  <Link
+                    to={activeCondition.link}
+                    className="inline-flex items-center gap-2 text-brand hover:text-brand-dark font-semibold group transition-colors focus:outline-none focus:underline"
+                  >
+                    <span>Learn more about {activeCondition.title} care</span>
+                    <span className="transform group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
+                  </Link>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>
@@ -495,7 +543,6 @@ const FAQ = () => {
           >
             <div className="flex items-center gap-4 mb-4">
               <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Frequently Asked Questions</h3>
-              <div className="h-px w-12 bg-brand"></div>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-10 leading-tight">
               FAQ
@@ -678,25 +725,55 @@ const Location = () => {
               </div>
             </div>
 
-            <div className="mt-12 pt-8 border-t border-gray-100">
-              <a href="tel:+12065550123" className="w-full inline-block text-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:-translate-y-1">
+            <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col items-center gap-3">
+              <a href="tel:+12067950126" className="w-full inline-block text-center bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(106,139,141,0.5)] hover:-translate-y-1">
                 Call to Book Your Visit
               </a>
+              <p className="text-sm text-gray-500 flex items-center gap-2 mt-1">
+                <Clock className="h-4 w-4 text-brand" />
+                <span>Inquiries responded to within 2 business hours</span>
+              </p>
             </div>
           </div>
 
-          <div className="h-[400px] lg:h-auto w-full min-h-[400px] rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 relative">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.1587147733503!2d-122.20829988786016!3d47.46733649746342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905d456491ae49%3A0xfda9e5156d006533!2sAltitude%20Business%20Center%2C%201500%20Benson%20Rd%20S%20Suite%20202%2C%20Renton%2C%20WA%2098055!5e0!3m2!1sen!2sus!4v1771827915625!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0"
-              title="Clinic Location"
-            ></iframe>
+          <div className="flex flex-col gap-6 w-full">
+            <div className="flex-1 min-h-[350px] h-[350px] md:h-[400px] lg:h-auto rounded-2xl overflow-hidden shadow-xl shadow-gray-200/50 border border-gray-100 relative">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.1587147733503!2d-122.20829988786016!3d47.46733649746342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905d456491ae49%3A0xfda9e5156d006533!2sAltitude%20Business%20Center%2C%201500%20Benson%20Rd%20S%20Suite%20202%2C%20Renton%2C%20WA%2098055!5e0!3m2!1sen!2sus!4v1771827915625!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0"
+                title="Clinic Location"
+              ></iframe>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-xl shadow-brand/5 border border-gray-100 p-6 md:p-8 flex flex-col justify-center">
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <Map className="w-6 h-6 text-brand" />
+                </div>
+                <div className="w-full">
+                  <h4 className="font-bold text-xl text-gray-900 mb-2">Areas Serviced</h4>
+                  <p className="text-gray-600 leading-relaxed mb-3">
+                    Proudly serving Renton and surrounding communities:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {['Seattle', 'Kent', 'Auburn', 'Tukwila', 'Newcastle', 'Maple Valley', 'Covington'].map((city) => (
+                      <span
+                        key={city}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gray-50 text-gray-600 border border-gray-100 hover:border-brand/30 hover:bg-brand/[0.02] transition-all duration-300"
+                      >
+                        {city}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -706,6 +783,149 @@ const Location = () => {
 
 
 
+const Pricing = () => {
+  const tiers = [
+    {
+      title: "New Patient",
+      prices: [
+        { label: "Adult", price: "$220" },
+        { label: "12 Years & Younger", price: "$150" }
+      ],
+      description: "Ready to feel your best? Book your chiropractic appointment today! This isn't just a quick adjustment — it's a full-body wellness experience designed with you in mind.",
+      detailsTitle: "Your 30–45 minute session includes:",
+      details: [
+        "A full exam to understand your body's needs",
+        "A deep dive into your personal health goals",
+        "Expert supplement recommendations tailored to you",
+        "At-home stretches & release techniques to keep you feeling great",
+        "Full-body chiropractic adjustments to restore balance & relieve tension"
+      ],
+      buttonText: "New Patient Booking",
+      highlight: false
+    },
+    {
+      title: "Existing Patients",
+      prices: [
+        { label: "Adult", price: "$80" },
+        { label: "12 Years & Younger", price: "$55" }
+      ],
+      description: "Keep the momentum going with your follow-up chiropractic sessions! These visits are more than just a \"tune-up\" — they're key to maintaining your progress and keeping your body functioning at its best.",
+      detailsTitle: "In just 15 minutes, you'll get:",
+      details: [
+        "A personalized check-in to assess changes or new concerns",
+        "Full-body adjustments to keep your spine and joints aligned",
+        "Continued support with at-home stretches or updates to your routine",
+        "Ongoing guidance on lifestyle, posture, and supplements to keep you thriving"
+      ],
+      footerText: "Staying consistent helps prevent issues from coming back, boosts your energy, and keeps your nervous system in top shape. Your body works hard — give it the care it deserves!",
+      ctaText: "Book your next appointment and stay on track with your wellness goals.",
+      buttonText: "Existing Patients Booking",
+      highlight: true
+    },
+    {
+      title: "Return Patient Session",
+      prices: [
+        { label: "", price: "$150" }
+      ],
+      description: "It's been a while — let's check back in! If it's been a year (or more) since your last visit, your body has likely gone through some changes — and we're here to help you get back on track",
+      detailsTitle: "Schedule your 30-minute Re-Examination Appointment and we'll:",
+      details: [
+        "Reassess your posture, alignment, and overall function",
+        "Discuss any new concerns, injuries, or lifestyle changes",
+        "Update your health goals and create a personalized game plan",
+        "Provide full-body adjustments + recommendations to support your progress"
+      ],
+      footerText: "Whether you're feeling off or just want to reconnect with your wellness goals, now's the perfect time. Your body deserves regular care — let's realign and refresh your routine!",
+      ctaText: "Book your re-exam today and give your health the reset it needs.",
+      buttonText: "Re-Exam Booking",
+      highlight: false
+    }
+  ];
+
+  return (
+    <section id="pricing" className="py-24 md:py-32 bg-white flex flex-col justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 md:mb-24">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="h-px w-12 bg-brand"></div>
+            <h3 className="text-brand font-semibold tracking-wider uppercase text-sm">Cost</h3>
+            <div className="h-px w-12 bg-brand"></div>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight">Our Pricing</h2>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+          {tiers.map((tier, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                y: -12,
+                transition: { type: "spring", stiffness: 400, damping: 25 }
+              }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className={`relative flex flex-col p-8 md:p-10 rounded-[2.5rem] border transition-all duration-500 ease-out hover:shadow-[0_30px_60px_rgba(106,139,141,0.15)] ${tier.highlight
+                ? 'bg-brand/5 border-brand/20'
+                : 'bg-gray-50 border-gray-100'
+                }`}
+            >
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex flex-col">
+                  {tier.title}
+                  <span className="h-1 w-16 bg-brand/30 rounded-full mt-2"></span>
+                </h3>
+
+                <div className="space-y-2 mb-6">
+                  {tier.prices.map((p, pIdx) => (
+                    <div key={pIdx} className="flex items-baseline gap-2">
+                      <span className="text-3xl font-bold text-gray-900">{p.price}</span>
+                      {p.label && <span className="text-gray-500 font-medium">— {p.label}</span>}
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-gray-600 leading-relaxed italic">
+                  {tier.description}
+                </p>
+              </div>
+
+              <div className="flex-grow space-y-6 mb-10">
+                <h4 className="font-bold text-gray-900">{tier.detailsTitle}</h4>
+                <ul className="space-y-4">
+                  {tier.details.map((detail, dIdx) => (
+                    <li key={dIdx} className="flex gap-3 items-start group">
+                      <div className="mt-1 bg-brand/10 p-1 rounded-full group-hover:bg-brand/20 transition-colors">
+                        <Check className="w-3.5 h-3.5 text-brand" />
+                      </div>
+                      <span className="text-gray-600 leading-snug">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {tier.footerText && <p className="text-gray-600 leading-relaxed">{tier.footerText}</p>}
+                {tier.ctaText && <p className="text-gray-900 font-bold italic">{tier.ctaText}</p>}
+              </div>
+
+              <div className="w-full mt-auto flex flex-col items-center gap-3">
+                <a
+                  href="https://liverightchiro.janeapp.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-4 px-6 rounded-full font-bold text-center transition-all duration-300 transform hover:-translate-y-1 bg-brand text-white shadow-[0_10px_25px_rgba(106,139,141,0.4)] hover:shadow-[0_15px_30px_rgba(106,139,141,0.5)] border border-transparent hover:border-brand-light"
+                >
+                  {tier.buttonText}
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Home = () => {
   return (
     <main>
@@ -713,6 +933,7 @@ const Home = () => {
       <About />
       <Features />
       <Services />
+      <Pricing />
       <Reviews />
       <FAQ />
       <Process />
@@ -733,6 +954,18 @@ export default function App() {
             <Route path="/health-data-privacy" element={<HealthDataPrivacy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/services/back-pain" element={<BackPain />} />
+            <Route path="/services/neck-pain" element={<NeckPain />} />
+            <Route path="/services/knee-foot-pain" element={<KneeFootPain />} />
+            <Route path="/services/sciatica" element={<Sciatica />} />
+            <Route path="/services/headaches-migraines" element={<HeadachesMigraines />} />
+            <Route path="/services/tmj-pain" element={<TMJPain />} />
+            <Route path="/services/whiplash" element={<Whiplash />} />
+            <Route path="/services/carpal-tunnel" element={<CarpalTunnel />} />
+            <Route path="/services/plantar-fasciitis" element={<PlantarFasciitis />} />
+            <Route path="/services/postural-care" element={<PosturalCare />} />
+            <Route path="/services/post-partum" element={<PostPartum />} />
+            <Route path="/services/pediatric-care" element={<PediatricCare />} />
           </Routes>
           <Footer />
         </div>

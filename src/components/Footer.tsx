@@ -26,10 +26,10 @@ const Footer = () => {
             <div className="space-y-6">
               <h3 className="text-white font-bold uppercase tracking-wider text-sm">Services</h3>
               <ul className="space-y-4 text-base">
-                <li><Link to="/" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Back Pain</Link></li>
-                <li><Link to="/" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Neck Pain</Link></li>
-                <li><Link to="/" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Postural Care</Link></li>
-                <li><Link to="/" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Pediatric</Link></li>
+                <li><Link to="/services/back-pain" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Back Pain</Link></li>
+                <li><Link to="/services/neck-pain" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Neck Pain</Link></li>
+                <li><Link to="/services/postural-care" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Postural Care</Link></li>
+                <li><Link to="/services/pediatric-care" className="hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-gray-900 rounded">Pediatric Care</Link></li>
               </ul>
             </div>
           </div>
