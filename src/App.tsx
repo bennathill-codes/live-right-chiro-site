@@ -27,6 +27,7 @@ import {
 // New Imports
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import BackToTopButton from './components/BackToTopButton';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import HealthDataPrivacy from './pages/legal/HealthDataPrivacy';
 import TermsOfService from './pages/legal/TermsOfService';
@@ -968,6 +969,7 @@ export default function App() {
             <Route path="/services/pediatric-care" element={<PediatricCare />} />
           </Routes>
           <Footer />
+          <BackToTopButton />
         </div>
       </BrowserRouter>
     </HelmetProvider>
