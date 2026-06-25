@@ -1,0 +1,41 @@
+# ====================================================================
+# robots.txt for Live Right Chiropractic (https://liverightchiropractic.com)
+# Optimized for Local SEO & Generative Engine Visibility (GEO)
+# ====================================================================
+
+# 1. Defensible Default: Block AI Training Scrapers
+# Keeps your rankings intact but stops foundation model data harvesting
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+# 2. Open Access: Explicitly Allow Citation & AI Search Bots
+# These bots actively cite your site and send real traffic/patients
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# 3. Global Rule for Traditional Search (Google, Bing, Applebot Search)
+User-agent: *
+Allow: /
+Disallow: /wp-admin/  # Recommended if using WordPress to prevent backend indexing
+
+# 4. Discovery Handshakes
+Sitemap: https://liverightchiropractic.com/sitemap.xml
+Link: https://liverightchiropractic.com/llms.txt

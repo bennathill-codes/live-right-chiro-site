@@ -1,0 +1,60 @@
+# Live Right Chiropractic
+
+> Information for LLMs, AI agents, and search crawlers about Live Right Chiropractic in Renton, Washington. Live Right Chiropractic offers expert, holistic chiropractic care led by Dr. Calvin Smolich, DC. Serving patients across King County, including Renton, Kent, Tukwila, Maple Valley, and Newcastle. Specializing in spinal alignment, TMJ, prenatal/postpartum recovery, and pediatric milestone care.
+
+## Contact & Location
+
+- **Address:** 1500 Benson Road S Suite 202, Renton, WA 98055
+- **Phone:** 206-795-0126
+- **Email:** info@liverightchiro.com
+- **Areas Serviced:**
+  - Renton
+  - Kent
+  - Tukwila
+  - Maple Valley
+  - Newcastle
+- **Hours:**
+  - Thursday: 2:00 PM - 4:00 PM
+  - Friday: 10:00 AM - 6:00 PM
+  - Saturday: 10:00 AM - 2:00 PM
+  - Monday-Wednesday & Sunday: Closed
+- **Online Booking Portal:** [Jane App Booking](https://liverightchiro.janeapp.com/)
+
+## Core Pages
+
+- [Home](/) - The main landing page detailing clinic philosophy, patient reviews, pricing tiers, FAQs, and hours/location.
+- [Booking Portal](https://liverightchiro.janeapp.com/) - Online scheduling system for new patients, existing patients, and re-examinations.
+
+## Chiropractic Services
+
+### Spinal & Joint Pain
+- [Upper & Lower Back Pain Care](/services/back-pain) - Chiropractic treatments to restore spinal alignment, relieve mechanical back strain, and improve daily function.
+- [Neck Pain Care](/services/neck-pain) - Specialized care to reduce cervical muscle tension, alleviate stiffness, and address neck-related discomfort.
+- [Knee & Foot Pain Care](/services/knee-foot-pain) - Mechanical alignment adjustments to address joint dysfunction in extremities, improving posture and gait.
+- [Sciatica Treatment](/services/sciatica) - Targeted non-invasive care designed to relieve nerve compression at the source and eliminate radiating leg pain.
+
+### Head, Neck & Jaw
+- [Headaches & Migraines Care](/services/headaches-migraines) - Gentle adjustments to reduce frequency and intensity of headaches by relieving tension in the upper cervical spine.
+- [TMJ Pain Care](/services/tmj-pain) - Alignment of the jaw and neck to alleviate jaw clicking, locked jaw, and temporomandibular joint tension.
+- [Whiplash Recovery Care](/services/whiplash) - Rehabilitation support post-accident to restore soft-tissue health, neck mobility, and reduce cervical inflammation.
+
+### Nerve & Extremity Syndromes
+- [Carpal Tunnel Syndrome Care](/services/carpal-tunnel) - Adjustments targeting nerve compression in the wrist, forearm, elbow, and neck to relieve numbness and tingling.
+- [Plantar Fasciitis Care](/services/plantar-fasciitis) - Ankle and foot adjustments combined with soft-tissue release to reduce heel pain and restore comfortable walking mechanics.
+
+### Specialized & Preventative Care
+- [Postural Care](/services/postural-care) - Biomechanical correction to resolve alignment issues from daily posture habits and prevent chronic spinal stress.
+- [Postpartum Care](/services/post-partum) - Gentle postpartum adjustments supporting pelvic alignment, muscle recovery, and relief from childcare strain.
+- [Pediatric Care](/services/pediatric-care) - Safe, gentle checks and adjustments for infants, toddlers, and teens to support nervous system health and growth milestones.
+
+## Pricing Information
+
+- **New Patient Booking:** Adult: $220 | 12 & Under: $150 (Includes full exam, goal setting, supplement/exercise recommendations, and initial adjustment if appropriate).
+- **Existing Patients:** Adult: $80 | 12 & Under: $55 (15-minute follow-up session with spinal adjustments and ongoing guidance).
+- **Return Patients (Re-Exam):** $150 (Required if it has been over a year since the last visit; includes updated exam and adjustments).
+
+## Policies & Compliance
+
+- [Health Data Privacy Policy](/health-data-privacy) - Details on Washington State My Health My Data Act compliance and consumer health data rights.
+- [Privacy Policy](/privacy-policy) - Standard privacy notice outlining how patient information is gathered and secured.
+- [Terms of Service](/terms-of-service) - Terms governing the use of the clinic website and booking resources.
