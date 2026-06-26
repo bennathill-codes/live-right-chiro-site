@@ -43,6 +43,8 @@ import PlantarFasciitis from './pages/services/PlantarFasciitis';
 import PosturalCare from './pages/services/PosturalCare';
 import PostPartum from './pages/services/PostPartum';
 import PediatricCare from './pages/services/PediatricCare';
+import { Analytics } from '@vercel/analytics/react';
+
 
 const Navbar = () => {
   return (
@@ -970,6 +972,7 @@ export default function App() {
           </Routes>
           <Footer />
           <BackToTopButton />
+          <Analytics />
         </div>
       </BrowserRouter>
     </HelmetProvider>
